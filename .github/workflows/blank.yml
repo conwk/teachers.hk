@@ -30,6 +30,6 @@ jobs:
           FTP_USER = ${{ secrets.FTP_USER }}
           FTP_PASSWORD = ${{ secrets.FTP_PASSWORD }}
         with:
-          host: $FTP_HOST
-          user: $FTP_USER
-          password: $FTP_PASSWORD
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
