@@ -23,7 +23,7 @@ jobs:
     FTP_PASSWORD : ${{ secrets.FTP_PASSWORD }}
   steps:
     - uses: actions/checkout@v2
-    - name: CheckData
+    - name: CheckDataNow
       run: |
         echo SECRET_VIEW view $SECRET_VIEW
         echo ENV_VIEW view $ENV_VIEW
