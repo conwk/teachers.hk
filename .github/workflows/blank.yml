@@ -17,6 +17,9 @@ jobs:
   runs-on: ubuntu-latest
   environment: prod
   steps:
+  - name: 🚚 Get latest code
+    uses: actions/checkout@v2
+    
   - name: CodeDeploy
     uses: SamKirkland/FTP-Deploy-Action@4.1.0
     with:
