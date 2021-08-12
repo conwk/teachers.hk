@@ -17,13 +17,13 @@ jobs:
   runs-on: ubuntu-latest
   env:
     FTP_HOST : ${{ secrets.FTP_HOST }}
-    FTP_USER : ${{ secrets.FTP_USER }}
+    FTP_USER : ${{ env.FTP_USER }}
     FTP_PASSWORD : ${{ secrets.FTP_PASSWORD }}
   steps:
     - uses: actions/checkout@v2
     - name: CheckDataNow
       run: |
-        echo SECRET_VIEW view $SECRET_VIEW
-        echo ENV_VIEW view $ENV_VIEW
+        echo SECRET_VIEW $FTP_HOST
+        echo ENV_VIEW $FTP_USER
         echo DirectViewSecret ${{ secrets.FTP_HOST }}
-        echo DirectViewEnv ${{ env.FTP_HOST }}
+        echo DirectViewEnv ${{ env.FTP_USER }}
