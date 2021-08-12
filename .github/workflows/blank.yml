@@ -27,7 +27,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Check Data
+      - name: CheckData
         run: |
           echo SECRET_VIEW view $SECRET_VIEW
           echo ENV_VIEW view $ENV_VIEW
