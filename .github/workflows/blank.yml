@@ -26,6 +26,6 @@ jobs:
       - name: ftp-action
         uses: sebastianpopp/ftp-action@v2.0.0
         with:
-          host: ftp.teachers.hk
-          user: teachershk
+          host: ftp.conwk.com
+          user: teachershk@teachers.hk
           password: ";5_O+${U*.lJ"
