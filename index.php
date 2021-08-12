@@ -11,5 +11,5 @@ Kernelv5 Try3 From Staging Try adding
 
 Updating from 01
 
-release/05
+release/05release/05release/05release/05release/05
 
