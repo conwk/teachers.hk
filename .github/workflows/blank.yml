@@ -13,6 +13,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  env:
+    FTP_HOST = ${{ secrets.FTP_HOST }}
+    FTP_USER = ${{ secrets.FTP_USER }}
+    FTP_PASSWORD = ${{ secrets.FTP_PASSWORD }}
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
@@ -22,22 +26,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: ftp-action
-        uses: sebastianpopp/ftp-action@v2.0.0
-        env:
-          FTP_HOST = ${{ secrets.FTP_HOST }}
-          FTP_USER = ${{ secrets.FTP_USER }}
-          FTP_PASSWORD = ${{ secrets.FTP_PASSWORD }}
-        with:
-          host: ${{ secrets.FTP_HOST }}
-          user: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
       
       - name: Check Data
-        env:
-          SECRET_VIEW: ${{ secrets.FTP_HOST }}
-          ENV_VIEW: ${{ env.FTP_HOST }}
         run: |
           echo SECRET_VIEW view $SECRET_VIEW
           echo ENV_VIEW view $ENV_VIEW
