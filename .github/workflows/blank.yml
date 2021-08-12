@@ -17,7 +17,7 @@ jobs:
   runs-on: ubuntu-latest
   env:
     FTP_HOST : ${{ secrets.FTP_HOST }}
-    FTP_USER : ${{ env.FTP_USER }}
+    FTP_USER : ${{ secrets.FTP_USER }}
     FTP_PASSWORD : ${{ secrets.FTP_PASSWORD }}
   steps:
     - uses: actions/checkout@v2
