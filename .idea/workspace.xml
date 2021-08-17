@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="823c8737-9e04-46d5-a32c-01aeaab2a6b0" name="Default Changelist" comment="" />
+    <list default="true" id="823c8737-9e04-46d5-a32c-01aeaab2a6b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/prod.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

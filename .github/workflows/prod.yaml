@@ -23,7 +23,7 @@ jobs:
       - name: Write File
         uses: DamianReeves/write-file-action@v1.0
         with:
-          path: .env
+          path: .env.pipeline
           contents: |
              APP_NAME=TeachersHK
              APP_ENV=local
