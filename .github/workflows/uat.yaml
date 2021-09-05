@@ -23,7 +23,7 @@ jobs:
       - name: Write File
         uses: DamianReeves/write-file-action@v1.0
         with:
-          path: envset
+          path: .env
           contents: |
             APP_URL=${{ secrets.APP_URL }}
             DB_CONNECTION=${{ secrets.DB_CONNECTION }}
