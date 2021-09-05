@@ -23,7 +23,7 @@ jobs:
       - name: Write File
         uses: DamianReeves/write-file-action@v1.0
         with:
-          path: .env
+          path: envset
           contents: |
             APP_URL=${{ secrets.APP_URL }}
             DB_CONNECTION=${{ secrets.DB_CONNECTION }}
@@ -40,4 +40,4 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          #log-level: verbose
+          log-level: verbose
