@@ -25,13 +25,24 @@ jobs:
         with:
           path: .env
           contents: |
+            APP_NAME=${{ secrets.APP_NAME }}
+            APP_ENV=${{ secrets.APP_ENV }}
+
             APP_URL=${{ secrets.APP_URL }}
+
             DB_CONNECTION=${{ secrets.DB_CONNECTION }}
             DB_HOST=${{ secrets.DB_HOST }}
             DB_PORT=${{ secrets.DB_PORT }}
             DB_DATABASE=${{ secrets.DB_DATABASE }}
             DB_USERNAME=${{ secrets.DB_USERNAME }}
             DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+
+            BROADCAST_DRIVER=${{ secrets.BROADCAST_DRIVER }}
+            CACHE_DRIVER=${{ secrets.CACHE_DRIVER }}
+            FILESYSTEM_DRIVER=${{ secrets.FILESYSTEM_DRIVER }}
+            QUEUE_CONNECTION=${{ secrets.QUEUE_CONNECTION }}
+            SESSION_DRIVER=${{ secrets.SESSION_DRIVER }}
+            SESSION_LIFETIME=${{ secrets.SESSION_LIFETIME }}
           write-mode: overwrite
 
       - name: CodeDeploy
