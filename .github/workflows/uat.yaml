@@ -44,6 +44,10 @@ jobs:
             QUEUE_CONNECTION=${{ secrets.QUEUE_CONNECTION }}
             SESSION_DRIVER=${{ secrets.SESSION_DRIVER }}
             SESSION_LIFETIME=${{ secrets.SESSION_LIFETIME }}
+
+            SMS_API_KEY=${{ secrets.SMS_API_KEY }}
+            SMS_API_SECRET=${{ secrets.SMS_API_SECRET }}
+            MOBILE_EXTENSION=${{ secrets.MOBILE_EXTENSION }}
           write-mode: overwrite
 
       - name: CodeDeploy
