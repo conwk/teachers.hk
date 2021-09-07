@@ -105,7 +105,9 @@
 									<a class="dropdown-item" href="{{ route('profile') }}">
                                         {{ __('Profile') }}
                                     </a>
-
+<a class="dropdown-item" href="{{ route('posts') }}">      
+							{{ __('Post') }}                           
+							</a>
                                     <a class="dropdown-item" href="{{ route('signOut') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

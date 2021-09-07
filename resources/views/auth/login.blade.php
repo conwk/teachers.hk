@@ -74,6 +74,7 @@
                     <div class="card-header">{{ __('Login') }}</div>
 
                    <div class="content">
+						<div><span id="timer"></span></div>
                         <form action="{{ route('login.user') }}" id="sendOtp" method="post">
                             @csrf
 
@@ -118,10 +119,31 @@
 </html>
 
 
-
+ 
     <script>
+		var timerOn = true;
+		function timer(remaining,reset) {
+			var m = Math.floor(remaining / 60);
+			var s = remaining % 60;		  
+			m = m < 10 ? '0' + m : m;
+			s = s < 10 ? '0' + s : s;
+			document.getElementById('timer').innerHTML = m + ':' + s;
+			remaining -= 1;
+				console.log(remaining);
+			if(remaining >= 0 && timerOn) {				
+				setTimeout(function() {
+					timer(remaining);				
+				}, 1000);
+			return;
+			}
+			if(!timerOn) {		
+				return;
+			}
+		}
+	
+	
         $('.otp').hide();
-        function sendOtp() {			
+        function sendOtp() {
 			$('.alert').remove();
 			$('.otp').hide().val('');          
             $.ajaxSetup({
@@ -138,8 +160,10 @@
 				//var dataJson = JSON.parse(data);				
 				$('#sendOtp').prepend('<span class="alert error">'+data.message+'</span>');			
 				if(data.status == true){					
+					timer(300);						
 					$('.otp').show();                    
-					$('.sendOtp').text('Resend');				
+					$('.sendOtp').hide();                    
+					//$('.sendOtp').text('Resend');				
 					}
                 },
                 error:function () {
@@ -187,4 +211,7 @@
 		  });
 		});
 		
+		
+
+
     </script>
