@@ -57,7 +57,7 @@ class Post extends Authenticatable
     private function createSlug($title)
     {       
 		if (static::whereSlug($slug = Str::slug($title))->exists()) {
-            $max = static::whereName($title)->latest('id')->skip(1)->value('slug');
+            $max = static::whereTitle($title)->latest('id')->skip(1)->value('slug');
             if (isset($max[-1]) && is_numeric($max[-1])) {
                 return preg_replace_callback('/(\d+)$/', function ($mathces) {
                     return $mathces[1] + 1;

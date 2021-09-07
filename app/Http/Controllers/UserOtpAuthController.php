@@ -8,6 +8,7 @@ use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Cookie;
 //use Illuminate\Support\Facades\Session;
 
 class UserOtpAuthController extends Controller
@@ -21,14 +22,14 @@ class UserOtpAuthController extends Controller
         return view('auth.login');
     }  
 	
-	
+
     public function sendOtp(Request $request){
         $otp = rand(1000,9999);
         $basic  = new \Nexmo\Client\Credentials\Basic($_ENV['SMS_API_KEY'], $_ENV['SMS_API_SECRET']);
         $client = new \Nexmo\Client($basic);
         $users = User::where('mobile', '=', $request->input('mobile'))->first();
 		$result = array();
-		$request->session()->put('otpValue',$otp);
+		$request->session()->put('otpValue',time());
 		
 	   if ($users === null) {
             User::create([
@@ -80,8 +81,11 @@ class UserOtpAuthController extends Controller
 
     public function userLogin(Request $request)
     {
-		
-		if($request->session()->has('otpValue')){
+	
+		$timeA = $request->session()->get('otpValue');
+		$timeB = time(); 
+		$checkTime = ($timeB - $timeA) / 60; // 25
+		if($checkTime < 5){
 			Log::info($request);
 			$result = array();
 			$user  = User::where([['mobile','=',request('mobile')],['otp','=',request('otp')]])->first();       
