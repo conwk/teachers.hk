@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserOtpAuthController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
@@ -27,6 +28,14 @@ Route::post('updateProfile', [UserOtpAuthController::class, 'updateProfile'])->n
 Route::post('user-login', [UserOtpAuthController::class, 'userLogin'])->name('login.user'); 
 Route::post('sendOtp', [UserOtpAuthController::class, 'sendOtp'])->name('sendOtp'); 
 Route::post('signout', [UserOtpAuthController::class, 'signOut'])->name('signOut');
+
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts');		
+Route::get('/posts/add', [PostController::class, 'add'])->name('posts.add');	
+Route::post('/posts/update', [PostController::class, 'update'])->name('posts.update');	
+Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');	
+Route::delete('/posts/destroy/{id}', [PostController::class, 'destroy'])->name('posts.destroy');	
+Route::post('/posts/category', [PostController::class, 'category'])->name('posts.category');	
 
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
