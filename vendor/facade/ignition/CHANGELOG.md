@@ -1,6 +1,14 @@
 # Changelog
 
-All notable changes to `ignition` will be documented in this file
+All notable changes to `ignition` will be documented in this fil
+
+## 2.12.0 - 2021-08-24
+
+- add support for collecting information about jobs (#412)
+
+## 2.11.4 - 2021-08-16
+
+- use npm ci instead of install (#411)
 
 ## 2.11.3 - 2021-08-16
 
