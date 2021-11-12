@@ -259,16 +259,6 @@ class Stringable implements JsonSerializable
     }
 
     /**
-     * Determine if a given string is a valid UUID.
-     *
-     * @return bool
-     */
-    public function isUuid()
-    {
-        return Str::isUuid($this->value);
-    }
-
-    /**
      * Determine if the given string is empty.
      *
      * @return bool

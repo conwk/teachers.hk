@@ -790,42 +790,20 @@ class PendingRequest
      */
     public function buildClient()
     {
-        return $this->client = $this->client ?: $this->createClient($this->buildHandlerStack());
-    }
-
-    /**
-     * Create new Guzzle client.
-     *
-     * @param  \GuzzleHttp\HandlerStack  $handlerStack
-     * @return \GuzzleHttp\Client
-     */
-    public function createClient($handlerStack)
-    {
-        return new Client([
-            'handler' => $handlerStack,
+        return $this->client = $this->client ?: new Client([
+            'handler' => $this->buildHandlerStack(),
             'cookies' => true,
         ]);
     }
 
     /**
-     * Build the Guzzle client handler stack.
+     * Build the before sending handler stack.
      *
      * @return \GuzzleHttp\HandlerStack
      */
     public function buildHandlerStack()
     {
-        return $this->pushHandlers(HandlerStack::create());
-    }
-
-    /**
-     * Add the necessary handlers to the given handler stack.
-     *
-     * @param  \GuzzleHttp\HandlerStack  $handlerStack
-     * @return \GuzzleHttp\HandlerStack
-     */
-    public function pushHandlers($handlerStack)
-    {
-        return tap($handlerStack, function ($stack) {
+        return tap(HandlerStack::create(), function ($stack) {
             $stack->push($this->buildBeforeSendingHandler());
             $stack->push($this->buildRecorderHandler());
             $stack->push($this->buildStubHandler());
@@ -1041,21 +1019,6 @@ class PendingRequest
     public function setClient(Client $client)
     {
         $this->client = $client;
-
-        return $this;
-    }
-
-    /**
-     * Create a new client instance using the given handler.
-     *
-     * @param  callable  $handler
-     * @return $this
-     */
-    public function setHandler($handler)
-    {
-        $this->client = $this->createClient(
-            $this->pushHandlers(HandlerStack::create($handler))
-        );
 
         return $this;
     }
