@@ -35,7 +35,7 @@ final class Versions
     const VERSIONS          = array (
   'asm89/stack-cors' => 'v2.0.3@9cb795bf30988e8c96dd3c40623c48a877bc6714',
   'brick/math' => '0.9.3@ca57d18f028f84f777b2168cd1911b0dee2343ae',
-  'composer/package-versions-deprecated' => '1.11.99.3@fff576ac850c045158a250e7e27666e146e78d18',
+  'composer/package-versions-deprecated' => '1.11.99.4@b174585d1fe49ceed21928a945138948cb394600',
   'doctrine/inflector' => '2.0.3@9cf661f4eb38f7c881cac67c75ea9b00bf97b210',
   'doctrine/lexer' => '1.2.1@e864bbf5904cb8f5bb334f99209b48018522f042',
   'dragonmantank/cron-expression' => 'v3.1.0@7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c',
@@ -45,20 +45,17 @@ final class Versions
   'guzzlehttp/guzzle' => '7.3.0@7008573787b430c1c1f650e3722d9bba59967628',
   'guzzlehttp/promises' => '1.4.1@8e7d04f1f6450fef59366c399cfad4b9383aa30d',
   'guzzlehttp/psr7' => '2.0.0@1dc8d9cba3897165e16d12bb13d813afb1eb3fe7',
-  'laminas/laminas-diactoros' => '2.6.0@7d2034110ae18afe05050b796a3ee4b3fe177876',
-  'laminas/laminas-zendframework-bridge' => '1.3.0@13af2502d9bb6f7d33be2de4b51fb68c6cdb476e',
-  'laravel/framework' => 'v8.56.0@d700f336dc672dcbfe46db05d4e5fe9347b3a5b6',
-  'laravel/sanctum' => 'v2.11.2@b21e65cbe13896946986cb0868180cd69e1bd5d3',
+  'intervention/image' => '2.7.0@9a8cc99d30415ec0b3f7649e1647d03a55698545',
+  'laminas/laminas-diactoros' => '2.8.0@0c26ef1d95b6d7e6e3943a243ba3dc0797227199',
+  'laravel/framework' => 'v8.54.0@7b88554cd1aeb52b7f82689bf244182e7a81894b',
   'laravel/tinker' => 'v2.6.1@04ad32c1a3328081097a181875733fa51f402083',
-  'laravel/ui' => 'v3.3.0@07d725813350c695c779382cbd6dac0ab8665537',
-  'lcobucci/jwt' => '3.4.5@511629a54465e89a31d3d7e4cf0935feab8b14c1',
+  'lcobucci/jwt' => '3.4.6@3ef8657a78278dfeae7707d51747251db4176240',
   'league/commonmark' => '1.6.6@c4228d11e30d7493c6836d20872f9582d8ba6dcf',
-  'league/flysystem' => '1.1.5@18634df356bfd4119fe3d6156bdb990c414c14ea',
+  'league/flysystem' => '1.1.4@f3ad69181b8afed2c9edf7be5a2918144ff4ea32',
   'league/mime-type-detection' => '1.7.0@3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
   'monolog/monolog' => '2.3.2@71312564759a7db5b789296369c1a264efc43aad',
-  'nesbot/carbon' => '2.52.0@369c0e2737c56a0f39c946dd261855255a6fccbe',
-  'nexmo/client' => '2.4.0@9d515f6592d466159f79dde460ce2b99b8128279',
-  'nexmo/client-core' => '2.9.2@5feed4876c603423c52eb751d1b46de9d60d1ceb',
+  'nesbot/carbon' => '2.51.1@8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922',
+  'nexmo/laravel' => '2.4.1@029bdc19fc58cd6ef0aa75c7041d82b9d9dc61bd',
   'nikic/php-parser' => 'v4.12.0@6608f01670c3cc5079e18c1dab1104e002579143',
   'opis/closure' => '3.6.2@06e2ebd25f2869e54a306dda991f7db58066f7f6',
   'phpoption/phpoption' => '1.7.5@994ecccd8f3283ecf5ac33254543eb0ac946d525',
@@ -105,16 +102,18 @@ final class Versions
   'tijsverkoyen/css-to-inline-styles' => '2.2.3@b43b05cf43c1b6d849478965062b6ef73e223bb5',
   'vlucas/phpdotenv' => 'v5.3.0@b3eac5c7ac896e52deab4a99068e3f4ab12d9e56',
   'voku/portable-ascii' => '1.5.6@80953678b19901e5165c56752d087fc11526017c',
+  'vonage/client' => '2.4.0@29f23e317d658ec1c3e55cf778992353492741d7',
+  'vonage/client-core' => '2.9.2@2b734ff7d86d4b6f169df49aed3aefcdac7a40d0',
   'vonage/nexmo-bridge' => '0.1.0@62653b1165f4401580ca8d2b859f59c968de3711',
   'webmozart/assert' => '1.10.0@6964c76c7804814a842473e0c8fd15bab0f18e25',
   'doctrine/instantiator' => '1.4.0@d56bf6102915de5702778fe20f2de3b2fe570b5b',
   'facade/flare-client-php' => '1.8.1@47b639dc02bcfdfc4ebb83de703856fa01e35f5f',
-  'facade/ignition' => '2.12.0@74dcc32a2895a126d1e5f2cd3bbab499cac66db1',
+  'facade/ignition' => '2.11.3@7ac7f9729f178f64335728bcaf1499ec3c6a540f',
   'facade/ignition-contracts' => '1.0.2@3c921a1cdba35b68a7f0ccffc6dffc1995b18267',
   'fakerphp/faker' => 'v1.15.0@89c6201c74db25fa759ff16e78a4d8f32547770e',
   'filp/whoops' => '2.14.0@fdf92f03e150ed84d5967a833ae93abffac0315b',
   'hamcrest/hamcrest-php' => 'v2.0.1@8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
-  'laravel/sail' => 'v1.10.1@267fafeaf0e0311952316ae0f3c765abc7516469',
+  'laravel/sail' => 'v1.9.0@3e1aa8679b10ae9210eebfbc2ee5f3600f356702',
   'mockery/mockery' => '1.4.3@d1339f64479af1bee0e82a0413813fe5345a54ea',
   'myclabs/deep-copy' => '1.10.2@776f831124e9c62e1a2c601ecc52e776d8bb7220',
   'nunomaduro/collision' => 'v5.8.0@0c3c393462eada1233513664e2d22bb9f69ca393',
@@ -147,7 +146,7 @@ final class Versions
   'sebastian/type' => '2.3.4@b8cd8a1c753c90bc1a0f5372170e3e489136f914',
   'sebastian/version' => '3.0.2@c6c1022351a901512170118436c764e473f6de8c',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'laravel/laravel' => '1.0.0+no-version-set@',
+  'laravel/laravel' => 'dev-main@183e0f8d03b2afb6576b96175427d328a8b85b1d',
 );
 
     private function __construct()
@@ -207,7 +206,7 @@ final class Versions
             }
         } else {
             $rawData = InstalledVersions::getRawData();
-            if ($rawData === []) {
+            if ($rawData === null || $rawData === []) {
                 return false;
             }
         }

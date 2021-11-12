@@ -21,8 +21,9 @@ class Post extends Authenticatable
      * @var array
      */
     protected $fillable = [   
-        'createdBy',
+        'user_id',
         'title',
+        'subtitle',
 		 'slug',
         'content',
         'category_id',
