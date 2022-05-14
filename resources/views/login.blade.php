@@ -1,45 +1,31 @@
-
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Login') }}</div>
-
                     <div class="card-body">
                         <form action="{{ route('login.custom') }}" id="sendOtp" method="post">
                             @csrf
-
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Mobile No') }}</label>
-
                                 <div class="col-md-6">
                                     <input id="mobile" type="number" class="form-control" name="mobile" required autofocus>
-
                                 </div>
                             </div>
-
-
-
                             <div class="form-group row otp">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">OTP</label>
-
                                 <div class="col-md-12">
-
                                     <input id="otpprefix" value="+91" class="form-control" name="otpprefix" readonly>
                                     <input id="otp" type="number" class="form-control" name="otp" >
                                 </div>
                             </div>
-
-
                             <div class="form-group row mb-0 otp">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Login') }}
                                     </button>
-
                                 </div>
                             </div>
                         </form>
@@ -53,10 +39,6 @@
             </div>
         </div>
     </div>
-
-
-
-
     <script>  
         $('.otp').hide();
         function sendOtp() {

@@ -4,29 +4,38 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
-
-class PostsController extends Controller {
+class PostsController extends Controller {	
 	public function __construct()
     {
-		$this->middleware('auth:admin');
-    } 
-
-    public function index()
-    {	
-
-        $posts = Post::latest()->paginate(5);    
-        return view('admin.posts.index',compact('posts'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
-   
-	public function add(Post $post)
-    {
-		 return view('admin.posts.edit', [
-            'post' => $post,
-            'category' => Category::all()->pluck('name', 'id'),          
-        ]);
-        //return view('admin.posts.edit', compact('post'));
-    }	
+		$this->middleware('auth:admin');    
+	} 
+    public function index(){
+		$posts = Post::latest()->paginate(5);
+		return view('admin.posts.index',compact('posts')) 
+		->with('i', (request()->input('page', 1) - 1) * 5);    
+	}
+ 
+	public function add(Post $post){
+	/* 	$data = Post::select("title","tags")
+		->where('status', 1)	
+		->get()		
+		->toArray();	
+		$newArray = array();
+		foreach($data as $datas){		
+			$newTags = explode(',', $datas['tags']);	
+			$newArray['val'][] = trim($datas['title']);		
+			foreach($newTags as $newTag){		
+				$newArray['val'][] = trim($newTag);	
+			}	
+		}		
+		$newArrayUnique = array_unique($newArray['val']);	 */	
+		return view('admin.posts.edit', [	
+			'post' => $post,		
+			'category' => Category::all()->pluck('name', 'id'),   	
+			//'newArrayUnique' => $newArrayUnique,	
+		]);        
+		//return view('admin.posts.edit', compact('post'));   
+		}	
 	
 	public function edit($id = null) {
         $post = Post::find($id);

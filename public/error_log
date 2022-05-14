@@ -47,3 +47,10 @@
 [30-Aug-2021 10:23:39 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/UserOtpAuthController.php on line 53
 [30-Aug-2021 10:23:44 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/UserOtpAuthController.php on line 52
 [30-Aug-2021 10:23:44 UTC] PHP Warning:  Cannot use a scalar value as an array in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/UserOtpAuthController.php on line 53
+[17-Feb-2022 12:49:52 UTC] PHP Fatal error:  Allowed memory size of 1073741824 bytes exhausted (tried to allocate 651554816 bytes) in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/PostController.php on line 62
+[17-Feb-2022 12:53:22 UTC] PHP Fatal error:  Can't use method return value in write context in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/PostController.php on line 66
+[17-Feb-2022 12:53:30 UTC] PHP Fatal error:  Can't use method return value in write context in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/PostController.php on line 66
+[17-Feb-2022 12:54:57 UTC] PHP Fatal error:  Can't use method return value in write context in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/PostController.php on line 66
+[26-Feb-2022 07:42:33 UTC] PHP Fatal error:  Allowed memory size of 1073741824 bytes exhausted (tried to allocate 635584512 bytes) in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/ContactController.php on line 20
+[26-Feb-2022 07:42:47 UTC] PHP Fatal error:  Allowed memory size of 1073741824 bytes exhausted (tried to allocate 635584512 bytes) in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/ContactController.php on line 20
+[15-Apr-2022 14:32:27 UTC] PHP Fatal error:  Allowed memory size of 1073741824 bytes exhausted (tried to allocate 698884096 bytes) in /home/dvgsaeae/teacher.dvgsoft.com/app/Http/Controllers/SearchController.php on line 27

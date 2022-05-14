@@ -3,11 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserOtpAuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostsController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,10 +20,39 @@ use App\Http\Controllers\Admin\PostsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
-Route::get('dashboard', [UserOtpAuthController::class, 'dashboard']); 
+/*Front User*/
+Route::get('/', [SearchController::class, 'index'])->name('search');
+Route::get('autocomplete', [SearchController::class, 'autocomplete'])->name('autocomplete');
+//Route::get('/', [PostController::class, 'home'])->name('home');
+Route::get('login', [UserOtpAuthController::class, 'index'])->name('login');
+Route::post('login', [UserOtpAuthController::class, 'userLogin'])->name('login.user');
+Route::get('registration', [UserOtpAuthController::class, 'registration'])->name('registration');
+Route::post('registration', [UserOtpAuthController::class, 'registration'])->name('registration.update');
+Route::get('review', [UserOtpAuthController::class, 'review'])->name('review');
+Route::get('rejection', [UserOtpAuthController::class, 'rejection'])->name('rejection');
+Route::post('rejection', [UserOtpAuthController::class, 'rejection'])->name('rejection.update');
+Route::get('edit-profile', [UserOtpAuthController::class, 'edit_profile'])->name('edit_profile');
+Route::post('edit-profile', [UserOtpAuthController::class, 'updateProfile'])->name('edit_profile.update');
+Route::get('mem/{url}', [UserOtpAuthController::class, 'profile_view'])->name('profile.view');
+Route::get('profile', [UserOtpAuthController::class, 'profile'])->name('profile');
+Route::get('post/{url}', [PostController::class, 'view'])->name('post.view');
+Route::get('/post/edit/{url}', [PostController::class, 'edit'])->name('post.edit');	
+Route::post('/post/update', [PostController::class, 'update'])->name('post.update');
+//Route::post('/post/edit/{url}', [PostController::class, 'update'])->name('post.edit');
+Route::delete('/post/destroy/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+Route::get('my-post', [PostController::class, 'index'])->name('post');
+Route::get('add-post', [PostController::class, 'add'])->name('post.add');
+Route::post('add-post', [PostController::class, 'update'])->name('post.save');
+Route::post('sendOtp', [UserOtpAuthController::class, 'sendOtp'])->name('sendOtp'); 
+Route::post('signout', [UserOtpAuthController::class, 'signOut'])->name('signOut');
+Route::get('checkProfileUrl/{url}', [UserOtpAuthController::class, 'checkProfileUrl'])->name('checkProfileUrl');
+Route::get('remove-photo', [UserOtpAuthController::class, 'removePhoto'])->name('removePhoto');
+Route::get('dashboard', [UserOtpAuthController::class, 'dashboard'])->name('dashboard'); 
+Route::post('contact', [ContactController::class, 'contact'])->name('contact.contact'); 
+Route::post('contact_post', [ContactController::class, 'contact_post'])->name('contact.contact_post'); 
+Route::get('message', [ContactController::class, 'all_contact'])->name('contact.all_contact'); 
+//Route::get('contact', [ContactController::class, 'contact'])->name('contact');
+/*
 Route::get('login', [UserOtpAuthController::class, 'index'])->name('login');
 Route::get('profile', [UserOtpAuthController::class, 'profile'])->name('profile');
 Route::post('updateProfile', [UserOtpAuthController::class, 'updateProfile'])->name('login.updateProfile'); 
@@ -29,13 +60,12 @@ Route::post('user-login', [UserOtpAuthController::class, 'userLogin'])->name('lo
 Route::post('sendOtp', [UserOtpAuthController::class, 'sendOtp'])->name('sendOtp'); 
 Route::post('signout', [UserOtpAuthController::class, 'signOut'])->name('signOut');
 
-
 Route::get('/posts', [PostController::class, 'index'])->name('posts');		
 Route::get('/posts/add', [PostController::class, 'add'])->name('posts.add');	
 Route::post('/posts/update', [PostController::class, 'update'])->name('posts.update');	
 Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');	
 Route::delete('/posts/destroy/{id}', [PostController::class, 'destroy'])->name('posts.destroy');	
-Route::post('/posts/category', [PostController::class, 'category'])->name('posts.category');	
+Route::post('/posts/category', [PostController::class, 'category'])->name('posts.category');*/	
 
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
